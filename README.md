@@ -59,3 +59,32 @@ Observe que na mesma linha da conversão utilizamos o método Substring para peg
 > **Explicação tempo**: A mesma lógica que foi aplicada para o tipo, vamos aplicar para o tempo o que vai mudar é que o tempo foi feita em números inteiros e não char, na parte em que utilizamos o Substring, vamos fazer ao contrário ao inves de pegar o ultimo, vamos informar que vamos pegar o caractere a partir do 0 e ignorar o ultimo fazendo o inverso.
 
 Agora precisamos verificar 2 coisas, caso o tipo seja **M** devemos informar para nossa váriavel _multiplicacao_ que ela terá 60s que é equivalente a 1 minuto cada 60 segundos e caso o tempo seja 0, iremos encerrar a aplicação.
+
+Observe que logo após a nossa verificação, temos o método que faz o calculo e nele passamos como assinatura o tempo que desejamos seja em m ou s.
+
+```csharp
+    static void Calculo(int tempo)
+    {
+            int meuTempo = 0;
+
+            while (meuTempo != tempo)
+            {
+                Console.Clear();
+                meuTempo++;
+                Console.WriteLine(meuTempo);
+                Thread.Sleep(1000);
+            }
+
+            Console.Clear();
+            Console.WriteLine("Fim");
+            Thread.Sleep(2500);
+            Menu();
+   }
+```
+
+Logo acima é bem tranquilo de entender nosso método que faz o calculo do tempo, o tempo estamos recebendo via assinatura do método o que já vai nos facilitar.
+é preciso criar uma nova variável que foi nomeada como meuTempo que vai ter seu inicializador como 0.
+
+Agora para chegar no resultado que queremos devemos utilizar o While ou seja faça enquanto isso for diferente disto.
+Enquanto meu tempo dor diferente do tempo passado via assinatura acrescente 1 em 1 até chegar no tempo que recebemos no parametro.
+Depois fim e vamos exibir novamente nosso menu para o usuário.
